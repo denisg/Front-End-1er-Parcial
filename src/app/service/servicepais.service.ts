@@ -16,7 +16,5 @@ export class ServicepaisService {
 
   getPaises(): Observable<listadatos<Pais>> {
     return this.http.get<listadatos<Pais>>(this.api);
-
-
   }
 }
