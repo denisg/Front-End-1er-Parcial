@@ -10,7 +10,6 @@ import {Pais} from "../model/pais";
 export class ServicepaisService {
   private api: string = "https://equipoyosh.com/stock-nutrinatalia/pais";
 
-  //?????
   constructor(private http: HttpClient) {
   }
 
