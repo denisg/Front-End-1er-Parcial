@@ -1,12 +1,33 @@
-<h1 style="text-align:center">
-  Bienvenido a {{ title }}
-</h1>
-<div style="text-align:center">
-  <a routerLink="/pais">Lista de paises</a><!--enlaza con los componentes-->
-  <br/>
-  <a routerLink="/nuevopais">Agregar pais</a>
-  <div>
-    <router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="router.url != '/login'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Rehabilitación</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link"    routerLink="/" routerLinkActive="active">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/ficha" routerLink="/ficha" routerLinkActive="active">Fichas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/reserva" routerLinkActive="active">Reservas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/servicio" routerLinkActive="active">Servicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/reporte" routerLinkActive="active">Reporte</a>
+        </li>
 
+      </ul>
+      <button (click)="logOut()"class="btn btn-outline-primary" type="submit">Cerrar Sesión</button>
+      
+    </div>
   </div>
-</div>
+</nav>
+<body class="mx-auto mt-5">
+<router-outlet></router-outlet>
+</body>
