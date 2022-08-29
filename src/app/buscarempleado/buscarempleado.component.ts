@@ -1,6 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
-import { Persona } from '../models/persona';
+import { Persona } from '../model/persona';
 import { ServicecategoriaService } from '../service/servicecategoria.service';
 import { ServicepersonaService } from '../service/servicepersona.service';
 
