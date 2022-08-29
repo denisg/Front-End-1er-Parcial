@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
+
+## Agregue un plugin en chrome que activa/desactiva
+https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es
+
+<hr>
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -29,5 +35,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Problema del CORS
 
-Agregue un plugin en chrome que activa/desactiva
-https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es
