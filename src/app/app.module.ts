@@ -12,7 +12,6 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { ServicepersonaService } from './service/servicepersona.service';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,
