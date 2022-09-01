@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { listadatos } from '../model/datos';
-import { Reserva, ReservaPostBody, ReservaPutBody } from '../model/reserva';
+import { listadatos } from '../models/datos';
+import { Reserva, ReservaPostBody, ReservaPutBody } from '../models/reserva';
 import { base_url } from '../base_url';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';

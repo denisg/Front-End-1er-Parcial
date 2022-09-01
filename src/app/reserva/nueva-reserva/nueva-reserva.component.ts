@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from 'src/app/model/persona';
-import { Reserva, ReservaPostBody } from 'src/app/model/reserva';
+import { Persona } from 'src/app/models/persona';
+import { Reserva, ReservaPostBody } from 'src/app/models/reserva';
 import { ReservaService } from 'src/app/service/servicereserva.service';
 
 class Hora {

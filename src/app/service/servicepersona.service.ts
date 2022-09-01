@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Persona} from '../model/persona';
-import {listadatos} from '../model/datos'
+import {Persona} from '../models/persona';
+import {listadatos} from '../models/datos'
 import { Observable } from 'rxjs';
 
 import { base_url } from '../base_url';

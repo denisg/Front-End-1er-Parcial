@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from '../model/persona';
-import { Servicio } from '../model/servicio';
+import { Persona } from '../models/persona';
+import { Servicio } from '../models/servicio';
 import { ServicioService } from '../service/servicio.service';
 
 type Filtro = {

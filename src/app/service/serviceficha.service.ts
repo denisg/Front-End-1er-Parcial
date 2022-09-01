@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { listadatos } from '../model/datos';
-import { Ficha } from '../model/fichas';
+import { listadatos } from '../models/datos';
+import { Ficha } from '../models/fichas';
 import { base_url } from '../base_url';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';

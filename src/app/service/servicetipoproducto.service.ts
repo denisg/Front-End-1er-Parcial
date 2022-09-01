@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { base_url } from '../base_url';
-import { Subcategoria } from '../model/subcategoria';
-import { listadatos } from '../model/datos';
+import { Subcategoria } from '../models/subcategoria';
+import { listadatos } from '../models/datos';
 @Injectable({
   providedIn: 'root'
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
 import { Router } from '@angular/router';
-import { Persona } from '../model/persona'
-import { isSessionActive } from '../model/session';
+import { Persona } from '../models/persona'
+import { isSessionActive } from '../models/session';
 import { ServicepersonaService } from '../service/servicepersona.service';
 
 

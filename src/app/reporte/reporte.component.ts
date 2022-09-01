@@ -1,17 +1,17 @@
 import { HttpClient } from '@angular/common/http';
-import { Categoria } from '../model/categoria';
-import { Persona } from '../model/persona';
-import { Subcategoria } from '../model/subcategoria';
+import { Categoria } from '../models/categoria';
+import { Persona } from '../models/persona';
+import { Subcategoria } from '../models/subcategoria';
 import { ServicecategoriaService } from '../service/servicecategoria.service';
 import { ServicetipoproductoService } from '../service/servicetipoproducto.service';
 import { Component, OnInit } from '@angular/core';
-import { Servicio } from '../model/servicio';
+import { Servicio } from '../models/servicio';
 import { ServicioService } from '../service/servicio.service';
-import { Detalle } from '../model/detalle'
+import { Detalle } from '../models/detalle'
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 import { ExportToCSV } from "@molteni/export-csv";
-import { PresentacionProducto } from '../model/presentacionProducto';
+import { PresentacionProducto } from '../models/presentacionProducto';
 
 type Filtro = {
   fechaDesde ?: string,
