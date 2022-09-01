@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { listadatos } from 'src/app/models/datos';
-import { Servicio, DetalleS as Detalle } from 'src/app/models/servicio';
+import { listadatos } from 'src/app/model/datos';
+import { Servicio, DetalleS as Detalle } from 'src/app/model/servicio';
 import { ServicioService } from 'src/app/service/servicio.service';
 
 @Component({

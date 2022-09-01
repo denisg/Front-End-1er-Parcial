@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { listadatos } from 'src/app/models/datos';
-import { Ficha } from 'src/app/models/fichas';
-import { Persona } from 'src/app/models/persona';
-import { Servicio, ServicioPostBody } from 'src/app/models/servicio';
+import { listadatos } from 'src/app/model/datos';
+import { Ficha } from 'src/app/model/fichas';
+import { Persona } from 'src/app/model/persona';
+import { Servicio, ServicioPostBody } from 'src/app/model/servicio';
 import { ServicefichaService } from 'src/app/service/serviceficha.service';
 import { ServicioService } from 'src/app/service/servicio.service';
 

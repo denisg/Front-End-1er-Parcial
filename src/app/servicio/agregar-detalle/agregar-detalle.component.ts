@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Persona } from 'src/app/models/persona';
-import { PresentacionProducto } from 'src/app/models/presentacionProducto';
-import { DetallePostBody, Servicio } from 'src/app/models/servicio';
+import { Persona } from 'src/app/model/persona';
+import { PresentacionProducto } from 'src/app/model/presentacionProducto';
+import { DetallePostBody, Servicio } from 'src/app/model/servicio';
 import { ServicioService } from 'src/app/service/servicio.service';
 
 @Component({
