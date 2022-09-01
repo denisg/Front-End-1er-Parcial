@@ -1,47 +1,53 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FichaComponent } from './ficha/ficha.component';
+import { ModificarfichaComponent } from './ficha/modificarficha/modificarficha.component';
+import { NuevafichaComponent } from './ficha/nuevaficha/nuevaficha.component';
 import { HomeComponent } from './home/home.component';
-import { PaisComponent } from './pais/pais.component';
 import { LoginComponent } from './login/login.component';
-// import { FichaComponent } from './ficha/ficha.component';
-// import { NuevafichaComponent } from './ficha/nuevaficha/nuevaficha.component';
-// import { ModificarfichaComponent } from './ficha/modificarficha/modificarficha.component';
-import { ReporteComponent } from './reporte/reporte.component';
+import { ModificarReservaComponent } from './reserva/modificar-reserva/modificar-reserva.component';
+import { NuevaReservaComponent } from './reserva/nueva-reserva/nueva-reserva.component';
+import { ReservaComponent } from './reserva/reserva.component';
+import { AgregarDetalleComponent } from './servicio/agregar-detalle/agregar-detalle.component';
 import { NuevoServicioComponent } from './servicio/nuevo-servicio/nuevo-servicio.component';
 import { ServicioComponent } from './servicio/servicio.component';
 import { VerServicioComponent } from './servicio/ver-servicio/ver-servicio.component';
-import { AgregarDetalleComponent } from './servicio/agregar-detalle/agregar-detalle.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
-//se rutea los componentes aqui, que es el componente principal
+
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: HomeComponent,
   },
   {
-    path: 'pais',
-    component: PaisComponent,
+    path: "login",
+    component: LoginComponent
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: "ficha/:id/editar",
+    component: ModificarfichaComponent
   },
-  // {
-  //   path: 'ficha',
-  //   component: FichaComponent,
-  // },
-
-  // {
-  //   path: 'ficha/nuevo',
-  //   component: NuevafichaComponent,
-  // },
-  // {
-  //   path: 'ficha/:id/editar',
-  //   component: ModificarfichaComponent,
-  // },
   {
-    path: "reporte",
-    component: ReporteComponent
+    path: "ficha/nuevo",
+    component: NuevafichaComponent
+  },
+  {
+    path: "ficha",
+    component: FichaComponent
+  },
+  
+  {
+    path: "reserva",
+    component: ReservaComponent
+  },
+  {
+    path: "reserva/nuevo",
+    component: NuevaReservaComponent
+  },
+  {
+    path: "reserva/:id/editar",
+    component: ModificarReservaComponent
   },
   {
     path: "servicio",
@@ -58,11 +64,16 @@ const routes: Routes = [
   {
     path: "servicio/:id/detalle",
     component: AgregarDetalleComponent
+  },
+  {
+    path: "reporte",
+    component: ReporteComponent
   }
+  
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
