@@ -16,13 +16,15 @@ import { PaisComponent } from './pais/pais.component';
 // import { NuevafichaComponent } from './ficha/nuevaficha/nuevaficha.component';
 import { BuscarclienteComponent } from './buscarcliente/buscarcliente.component';
 import { BuscarempleadoComponent } from './buscarempleado/buscarempleado.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, PaisComponent, HomeComponent,
     //  FichaComponent,
     //  NuevafichaComponent,
     BuscarempleadoComponent,
-    BuscarclienteComponent,],
+    BuscarclienteComponent,
+    ReporteComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,

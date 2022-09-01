@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 // import { FichaComponent } from './ficha/ficha.component';
 // import { NuevafichaComponent } from './ficha/nuevaficha/nuevaficha.component';
 // import { ModificarfichaComponent } from './ficha/modificarficha/modificarficha.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 //se rutea los componentes aqui, que es el componente principal
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
   //   path: 'ficha/:id/editar',
   //   component: ModificarfichaComponent,
   // },
+  {
+    path: "reporte",
+    component: ReporteComponent
+  }
 ];
 
 @NgModule({

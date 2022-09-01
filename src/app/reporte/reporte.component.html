@@ -1,0 +1,110 @@
+<div class="row">
+  <form>
+    <div class="row">
+      <div class="form-group col-6" >
+          <label for="empleado">Empleado</label>
+          <div class="input-group">
+              <input type="text" class="form-control" id="empleado" name="empleado" readonly [(ngModel)] = "empleado.fullName"> 
+              <div class="input-group-append">
+                  <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#empleadoModal" type="button">Buscar</button>
+              </div>
+          </div>
+      </div>
+      <div class="form-group col-6">
+          <label for="cliente">Cliente</label>
+          <div class="input-group">
+              <input type="text" class="form-control" id="cliente" readonly name="cliente" [(ngModel)]="cliente.fullName"> 
+              <div class="input-group-append">
+                  <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#clienteModal" type="button" >Buscar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-6">
+      <label for="fechaDesde">Desde</label>
+      <input type="date" class="form-control" id="fechaDesde"  name="fechaDesde" [(ngModel)]="filtros.fechaDesde"> 
+    </div>
+    <div class="form-group col-6">
+      <label for="fechaHasta">Hasta</label>
+      <input type="date" class="form-control" id="fechaHasta"  name="fechaHasta" [(ngModel)]="filtros.fechaHasta"> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-6">
+    <label for="presentacionProducto">Presentacion Producto</label>
+    <select name="presentacionProducto" class="form-select" id="presentacionProducto" [(ngModel)]="presentacionProducto"> 
+        <option *ngFor="let presentacionProducto of presentacionProductos" [ngValue]="presentacionProducto">{{presentacionProducto.nombre}}</option>
+    </select>
+  </div>
+  </div>
+  </form>
+  
+  <div class="row">
+    <div class="col-md-9 text-end">
+      <button type="button" class="btn btn-info mt-2" [disabled]="!filtros.fechaDesde || !filtros.fechaHasta" (click)="generarReporteBasico()">Generar Reporte Basico</button>
+    </div>
+    <div class="col-md-3 text-end">
+      <button type="button" class="btn btn-info mt-2" [disabled]="!filtros.fechaDesde || !filtros.fechaHasta" (click)="generarReporteDetallado()">Generar Reporte Detallado</button>
+    </div>
+  </div>
+  
+  <div [hidden] = "esconderBasico" class="table-responsive" label="tablaBasica">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor="let header of columns" >{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let group of data">
+        <td>{{group.fechaHora.split(" ")[0]}}</td>
+        <td>{{group.idFichaClinica.idEmpleado.nombre + " " + group.idFichaClinica.idEmpleado.apellido }}</td>
+        <td>{{group.idFichaClinica.idCliente.nombre + " " + group.idFichaClinica.idCliente.apellido }}</td>
+        <td>{{group.presupuesto}}</td>
+        <td>{{group.idFichaClinica.idTipoProducto.descripcion}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  
+  <div [hidden] = "esconderDetallado" class="table-responsive" label="tablaDetallada">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" *ngFor="let header of columns" >{{header}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let group of superData">
+          <td>{{group.idServicio.idServicio}}</td>
+          <td>{{group.idServicio.fechaHora.split(" ")[0]}}</td>
+          <td>{{group.idServicio.idFichaClinica.idEmpleado.nombre + " " + group.idServicio.idFichaClinica.idEmpleado.apellido }}</td>
+          <td>{{group.idServicio.idFichaClinica.idCliente.nombre + " " + group.idServicio.idFichaClinica.idCliente.apellido }}</td>
+          <td>{{group.idPresentacionProducto.existenciaProducto.precioVenta}}</td>
+          <td>{{group.cantidad}}</td>
+          <td>{{group.idPresentacionProducto.existenciaProducto.precioVenta*group.cantidad}}</td>
+          <td>{{group.idPresentacionProducto.nombre}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+      
+
+  <div [hidden] = "esconderBoton" class="row">
+    <div class="col-md-11 text-end">
+      <button type="button" class="btn btn-success mt-2" (click)="descargarCSV()">CSV</button>
+    </div>
+    <div class="col-md-1 text-end">
+      <button type="button" class="btn btn-success mt-2" (click)="descargarPDF()"> PDF</button>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="empleadoModal" tabindex="-1" aria-hidden="true">
+    <app-buscarempleado (seleccionarEmpleadoEvent)="seleccionarEmpleado($event)"></app-buscarempleado>    
+  </div>
+  
+
+  <div class="modal fade" id="clienteModal" tabindex="-1" aria-hidden="true">
+   <app-buscarcliente (seleccionarClienteEvent)="seleccionarCliente($event)"></app-buscarcliente>
+  </div>
