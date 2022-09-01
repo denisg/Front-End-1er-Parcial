@@ -20,6 +20,10 @@ import { ReporteComponent } from './reporte/reporte.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { ModificarReservaComponent } from './reserva/modificar-reserva/modificar-reserva.component';
 import { NuevaReservaComponent } from './reserva/nueva-reserva/nueva-reserva.component';
+import { ServicioComponent } from './servicio/servicio.component';
+import { NuevoServicioComponent } from './servicio/nuevo-servicio/nuevo-servicio.component';
+import { AgregarDetalleComponent } from './servicio/agregar-detalle/agregar-detalle.component';
+import { VerServicioComponent } from './servicio/ver-servicio/ver-servicio.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, PaisComponent, HomeComponent,
@@ -30,7 +34,12 @@ import { NuevaReservaComponent } from './reserva/nueva-reserva/nueva-reserva.com
     ReporteComponent,
     ReservaComponent,
     ModificarReservaComponent,
-    NuevaReservaComponent,],
+    NuevaReservaComponent,
+    NuevoServicioComponent,
+    ServicioComponent,
+    AgregarDetalleComponent,
+    VerServicioComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

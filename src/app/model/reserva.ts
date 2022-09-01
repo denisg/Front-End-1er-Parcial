@@ -24,4 +24,8 @@ export class ReservaPutBody {
     idReserva!: number;
     flagAsistio!: string;
     observacion!: string;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b1c77030c66797dab5dd520aa6ff57d2c0277790
