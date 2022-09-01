@@ -14,10 +14,10 @@ export class Reserva {
 
 export class ReservaPostBody {
     fechaCadena!: string;
-    horaInicioCadena!: string;
+    horaInicioCadena!: string; 
     horaFinCadena!: string;
     idEmpleado!: Partial<Persona>;
-    idCliente!: Partial<Persona>;
+    idCliente!: Partial<Persona>; 
 }
 
 export class ReservaPutBody {

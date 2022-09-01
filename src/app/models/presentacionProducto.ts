@@ -1,7 +1,7 @@
-import { ExistenciaProducto } from './existenciaProducto';
+import { ExistenciaProducto } from "./existenciaProducto";
 
 export class PresentacionProducto {
-  idPresentacionProducto!: number;
-  existenciaProducto!: ExistenciaProducto;
-  nombre!: string;
+    idPresentacionProducto!: number;
+    existenciaProducto!: ExistenciaProducto;
+    nombre!: string;
 }

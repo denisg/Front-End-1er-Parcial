@@ -1,4 +1,5 @@
 export class listadatos<T> {
-  lista!: T[];
-  totalDatos!: number;
-}
+    lista!: T[];
+    totalDatos!: number;
+  }
+  

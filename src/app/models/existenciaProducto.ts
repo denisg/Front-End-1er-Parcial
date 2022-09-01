@@ -1,3 +1,3 @@
-export class ExistenciaProducto {
-  precioVenta!: number;
+export class ExistenciaProducto{
+    precioVenta!:number;
 }

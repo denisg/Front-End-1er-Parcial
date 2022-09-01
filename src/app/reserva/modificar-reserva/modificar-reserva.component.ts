@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Reserva, ReservaPutBody } from 'src/app/models/reserva';
-import { ReservaService } from 'src/app/service/servicereserva.service';
+import { ReservaService } from 'src/app/service/reserva.service';
 
 class Fecha {
   year: number;
@@ -93,8 +93,10 @@ export class ModificarReservaComponent implements OnInit {
   /*getReservas(idEmpleado: number, fecha: string) {
     let currentPage = this.config.currentPage;
     let itemsPerPage = this.config.itemsPerPage;
+
     let inicio = currentPage - 1;
     inicio = inicio * itemsPerPage;
+
     this.reservaService.getAgenda(idEmpleado, fecha)
       .subscribe((data: Reserva[]) => {
         this.data = data;
