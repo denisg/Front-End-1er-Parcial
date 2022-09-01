@@ -1,1 +1,101 @@
-<p>nueva-reserva works!</p>
+<div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Agregar Reserva</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="row">
+                <div class="form-group col-6" >
+                    <label for="empleado">Empleado</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="empleado" name="empleado" readonly [(ngModel)]="empleado.fullName"> 
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#empleadoModal" type="button">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-6" >
+                    <label for="empleado">Fecha</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd"
+                               name="dp" ngbDatepicker #d="ngbDatepicker" [(ngModel)]="fecha"
+                               (ngModelChange)="onDateChange()">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-info" (click)="d.toggle()" type="button">Elegir fecha</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="form-group col-6">
+                    <label for="cliente">Cliente</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="cliente" readonly name="cliente" [(ngModel)]="cliente.fullName"> 
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#clienteModal" type="button" >Buscar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-3" >
+                    <label for="empleado">Hora de inicio</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" name="inicio-hora" placeholder="HH" readonly [(ngModel)]="horaInicio.hora">
+                        <p class="m-1">:</p>
+                        <input type="number" class="form-control" name="inicio-minuto" placeholder="MM" readonly [(ngModel)]="horaInicio.minuto">
+                      </div>
+                </div>
+                <div class="col-3">
+                    <label for="empleado">Hora de fin</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" name="fin-hora" placeholder="HH" readonly [(ngModel)]="horaFin.hora">
+                        <p class="m-1">:</p>
+                        <input type="number" class="form-control" name="fin-minuto" placeholder="MM" readonly [(ngModel)]="horaFin.minuto">
+                      </div>
+                </div>
+            </div>
+        </form>    
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            <button type="button" class="btn btn-primary" (click)="crearReserva()">Guardar</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col" *ngFor="let header of columns" >{{header}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let group of data | paginate: config">
+                    <td>{{group.fecha}}</td>
+                    <td>{{group.horaInicio}}</td>
+                    <td>{{group.horaFin}}</td>
+                    <td>{{group.idEmpleado?.nombre + " " + group.idEmpleado?.apellido }}</td>
+                    <td>{{group.idCliente?.nombre + " " + group.idCliente?.apellido }}</td>
+                    <td>
+                        <button class="btn btn-outline-success mx-2" (click)="seleccionarTurno(group.horaInicio, group.horaFin)">Seleccionar</button>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <pagination-controls 
+            [previousLabel]="back"
+            [nextLabel]="next"
+            (pageChange)="pageChanged($event)">
+        </pagination-controls>
+    </div> 
+</div>
+
+
+
+<div class="modal fade" id="empleadoModal" tabindex="-1" aria-hidden="true">
+    <app-buscarempleado (seleccionarEmpleadoEvent)="seleccionarEmpleado($event)"></app-buscarempleado>    
+</div>
+
+
+<div class="modal fade" id="clienteModal" tabindex="-1" aria-hidden="true">
+   <app-buscarcliente (seleccionarClienteEvent)="seleccionarCliente($event)"></app-buscarcliente>
+</div>
