@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { listadatos } from '../models/datos';
-import { Persona } from '../models/persona';
-import { Reserva } from "../models/reserva";
-import { ReservaService } from '../service/reserva.service';
+import { listadatos } from '../model/datos';
+import { Persona } from '../model/persona';
+import { Reserva } from "../model/reserva";
+import { ReservaService } from '../service/servicereserva.service';
 
 type Filtro = {
   fechaDesde ?: string,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Reserva, ReservaPutBody } from 'src/app/models/reserva';
-import { ReservaService } from 'src/app/service/reserva.service';
+import { Reserva, ReservaPutBody } from 'src/app/model/reserva';
+import { ReservaService } from 'src/app/service/servicereserva.service';
 
 class Fecha {
   year: number;

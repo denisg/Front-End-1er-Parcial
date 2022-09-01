@@ -16,13 +16,19 @@ import { PaisComponent } from './pais/pais.component';
 // import { NuevafichaComponent } from './ficha/nuevaficha/nuevaficha.component';
 import { BuscarclienteComponent } from './buscarcliente/buscarcliente.component';
 import { BuscarempleadoComponent } from './buscarempleado/buscarempleado.component';
+import { ReservaComponent } from './reserva/reserva.component';
+import { ModificarReservaComponent } from './reserva/modificar-reserva/modificar-reserva.component';
+import { NuevaReservaComponent } from './reserva/nueva-reserva/nueva-reserva.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, PaisComponent, HomeComponent,
     //  FichaComponent,
     //  NuevafichaComponent,
     BuscarempleadoComponent,
-    BuscarclienteComponent,],
+    BuscarclienteComponent,
+    ReservaComponent,
+    ModificarReservaComponent,
+    NuevaReservaComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
