@@ -1,6 +1,6 @@
 # Proyectoangular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
 
 
 ## Agregue un plugin en chrome que activa/desactiva
