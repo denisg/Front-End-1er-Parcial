@@ -1,57 +1,55 @@
 <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Buscar Empleado</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-            <div class="row">
-                <div class="form-group col-6">
-                    <label for="nombre">Nombre</label>
-                    <input id="nombre" type="text" name="nombre" class="form-control" [(ngModel)]="nombre">
-                </div>
-                <div class="form-group col-6">
-                    <label for="apellido">Apellido</label>
-                    <input id="apellido" type="text" class="form-control" name="apellido" [(ngModel)]="apellido">
-                </div>
-               
-            </div>
-            <div class="row">
-              <div class="col-md-12 text-end">
-                <button type="button" class="btn btn-info mt-2" (click)="buscar()">Buscar</button>
-              </div>
-            </div>
-        </form>  
-        <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col" *ngFor="let header of columns" >{{header}}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let group of data | paginate: config">
-                  <td>{{group.nombre}}</td>
-                  <td>{{group.apellido}}</td>
-                  <td>{{group.email}}</td>
-                  <td>{{group.telefono}}</td>
-                  <td>{{group.ruc}}</td>
-                  <td>{{group.cedula}}</td>
-                  <td>{{group.fechaNacimiento}}</td>
-                  <td><button class="btn  btn-outline-success" data-bs-dismiss="modal" (click)="seleccionarEmpleado(group)">Seleccionar</button></td>
-                </tr>
-              </tbody>
-            </table>
-            </div>
-            <pagination-controls 
-                id="paginationEmpleado"
-                [previousLabel]="back"
-                [nextLabel]="next"
-                (pageChange)="pageChanged($event)">
-            </pagination-controls>
-      </div>
-      <div class="modal-footer">
-      </div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Buscar Empleado</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
+    <div class="modal-body">
+      <form>
+        <div class="row">
+          <div class="form-group col-sm-6 col-md-6">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" name="nombre" class="form-control" [(ngModel)]="nombre">
+          </div>
+          <div class="form-group col-sm-6 col-md-6">
+            <label for="apellido">Apellido</label>
+            <input id="apellido" type="text" class="form-control" name="apellido" [(ngModel)]="apellido">
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-end">
+            <button type="button" class="btn btn-primary mt-2" (click)="buscar()">Buscar</button>
+          </div>
+        </div>
+      </form>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" *ngFor="let header of columns">{{header}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let group of data | paginate: config">
+              <td>{{group.nombre}}</td>
+              <td>{{group.apellido}}</td>
+              <td>{{group.email}}</td>
+              <td>{{group.telefono}}</td>
+              <td>{{group.ruc}}</td>
+              <td>{{group.cedula}}</td>
+              <td>{{group.fechaNacimiento}}</td>
+              <td><button class="btn  btn-success" data-bs-dismiss="modal"
+                  (click)="seleccionarEmpleado(group)">Seleccionar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <pagination-controls id="paginationEmpleado" [previousLabel]="back" [nextLabel]="next"
+        (pageChange)="pageChanged($event)">
+      </pagination-controls>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
 </div>

@@ -5,7 +5,7 @@
 </div>
 <form>
   <div class="row">
-    <div class="form-group col-6">
+    <div class="form-group col-sm-6 col-md-6">
       <label for="empleado">Empleado</label>
       <div class="input-group">
         <input type="text" class="form-control" id="empleado" name="empleado" readonly [(ngModel)]="empleado.fullName">
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-sm-6 col-md-6">
       <label for="cliente">Cliente</label>
       <div class="input-group">
         <input type="text" class="form-control" id="cliente" readonly name="cliente" [(ngModel)]="cliente.fullName">
@@ -27,17 +27,17 @@
     </div>
   </div>
   <div class="row">
-    <div class="form-group col-6">
+    <div class="form-group col-sm-6 col-md-6">
       <label for="fechaDesde">Desde</label>
       <input type="date" class="form-control" id="fechaDesde" name="fechaDesde" [(ngModel)]="filtros.fechaDesde">
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-sm-6 col-md-6">
       <label for="fechaHasta">Hasta</label>
       <input type="date" class="form-control" id="fechaHasta" name="fechaHasta" [(ngModel)]="filtros.fechaHasta">
     </div>
   </div>
   <div class="row">
-    <div class="form-group col-6">
+    <div class="form-group col-sm-6 col-md-6">
       <label for="categoria">Categoria</label>
       <select class="form-select" id="categoria" name="categoria" [(ngModel)]="categoria"
         (ngModelChange)="getTipoProductos()">
@@ -45,7 +45,7 @@
 
       </select>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-sm-6 col-md-6">
       <label for="subcategoria">Tipo Producto</label>
       <select name="subcategoria" class="form-select" id="subcategoria" [(ngModel)]="tipoProducto">
         <option *ngFor="let tipoProducto of tipoProductos" [ngValue]="tipoProducto">{{tipoProducto.descripcion}}
@@ -78,7 +78,7 @@
         <td>{{group.idCliente.nombre + " " + group.idCliente.apellido }}</td>
         <td>{{group.idTipoProducto.idCategoria.descripcion}}</td>
         <td>{{group.idTipoProducto.descripcion}}</td>
-        <td><button class="btn  btn-outline-success" [routerLink]="[group.idFichaClinica,'editar']">Editar</button></td>
+        <td><button class="btn  btn-success" [routerLink]="[group.idFichaClinica,'editar']">Editar</button></td>
       </tr>
     </tbody>
   </table>

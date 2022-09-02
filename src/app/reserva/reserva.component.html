@@ -6,7 +6,7 @@
 
 <form>
     <div class="row">
-        <div class="form-group col-6">
+        <div class="form-group col-sm-6 col-md-6">
             <label for="empleado">Empleado</label>
             <div class="input-group">
                 <input type="text" class="form-control" id="empleado" name="empleado" readonly
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group col-6">
+        <div class="form-group col-sm-6 col-md-6">
             <label for="cliente">Cliente</label>
             <div class="input-group">
                 <input type="text" class="form-control" id="cliente" readonly name="cliente"
@@ -30,11 +30,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-6">
+        <div class="form-group col-sm-6 col-md-6">
             <label for="fechaDesde">Desde</label>
             <input type="date" class="form-control" id="fechaDesde" name="fechaDesde" [(ngModel)]="filtros.fechaDesde">
         </div>
-        <div class="form-group col-6">
+        <div class="form-group col-sm-6 col-md-6">
             <label for="fechaHasta">Hasta</label>
             <input type="date" class="form-control" id="fechaHasta" name="fechaHasta" [(ngModel)]="filtros.fechaHasta">
         </div>
@@ -62,10 +62,9 @@
                 <td>{{reserva.idEmpleado.nombre + " " + reserva.idEmpleado.apellido }}</td>
                 <td>{{reserva.idCliente.nombre + " " + reserva.idCliente.apellido }}</td>
                 <td>
-                    <button class="btn btn-primary-danger mx-2" (click)="cancelarReserva(reserva)">Cancelar</button>
-                    <button class="btn btn-primary-success mx-2"
-                        [routerLink]="[reserva.idReserva, 'editar']">Modificar</button>
-                    <button class="btn btn-primary-primary mx-2" routerLink="/ficha/nuevo">Nueva Ficha</button>
+                    <button class="btn btn-primary mx-2" routerLink="/ficha/nuevo">Nueva Ficha</button>
+                    <button class="btn btn-success mx-2" [routerLink]="[reserva.idReserva, 'editar']">Modificar</button>
+                    <button class="btn btn-danger mx-2" (click)="cancelarReserva(reserva)">Cancelar</button>
                 </td>
             </tr>
         </tbody>

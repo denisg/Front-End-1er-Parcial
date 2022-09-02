@@ -1,74 +1,80 @@
 <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Agregar Ficha</h5>
-      </div>
-      <div class="modal-body">
-        <form>
-            <div class="row">
-                <div class="form-group col-6" >
-                    <label for="empleado">Empleado</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="empleado" name="empleado" readonly 
-                        [value]="reserva.idEmpleado?.nombre + ' ' + reserva.idEmpleado?.apellido" >
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Agregar Ficha</h5>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="row">
+                    <div class="form-group col-sm-6 col-md-6">
+                        <label for="empleado">Empleado</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="empleado" name="empleado" readonly
+                                [value]="reserva.idEmpleado?.nombre + ' ' + reserva.idEmpleado?.apellido">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-6">
+                        <label for="empleado">Fecha</label>
+                        <div class="input-group">
+                            <input readonly class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+                                #d="ngbDatepicker" [ngModel]="fecha" />
+                        </div>
                     </div>
                 </div>
-                <div class="form-group col-6" >
-                    <label for="empleado">Fecha</label>
-                    <div class="input-group">
-                        <input readonly class="form-control" placeholder="yyyy-mm-dd"
-                               name="dp" ngbDatepicker #d="ngbDatepicker" [ngModel]="fecha" />
-                      </div>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="form-group col-6">
-                    <label for="cliente">Cliente</label>
-                    <div class="input-group">
-                        <input readonly type="text" class="form-control" id="cliente" readonly name="cliente" 
-                        [value]="reserva.idCliente?.nombre + ' ' + reserva.idCliente?.apellido" /> 
+                <div class="row mt-3">
+                    <div class="form-group col-sm-6 col-md-6">
+                        <label for="cliente">Cliente</label>
+                        <div class="input-group">
+                            <input readonly type="text" class="form-control" id="cliente" readonly name="cliente"
+                                [value]="reserva.idCliente?.nombre + ' ' + reserva.idCliente?.apellido" />
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-6">
+                        <label for="empleado">Hora de inicio</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" name="inicio-hora" placeholder="HH" readonly
+                                [(ngModel)]="horaInicio.hora">
+                            <p class="m-1">:</p>
+                            <input type="number" class="form-control" name="inicio-minuto" placeholder="MM" readonly
+                                [(ngModel)]="horaInicio.minuto">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <label for="empleado">Hora de fin</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" name="fin-hora" placeholder="HH" readonly
+                                [(ngModel)]="horaFin.hora">
+                            <p class="m-1">:</p>
+                            <input type="number" class="form-control" name="fin-minuto" placeholder="MM" readonly
+                                [(ngModel)]="horaFin.minuto">
+                        </div>
                     </div>
                 </div>
-                <div class="form-group col-3" >
-                    <label for="empleado">Hora de inicio</label>
-                    <div class="input-group">
-                        <input type="number" class="form-control" name="inicio-hora" placeholder="HH" readonly [(ngModel)]="horaInicio.hora">
-                        <p class="m-1">:</p>
-                        <input type="number" class="form-control" name="inicio-minuto" placeholder="MM" readonly [(ngModel)]="horaInicio.minuto">
-                      </div>
-                </div>
-                <div class="col-3">
-                    <label for="empleado">Hora de fin</label>
-                    <div class="input-group">
-                        <input type="number" class="form-control" name="fin-hora" placeholder="HH" readonly [(ngModel)]="horaFin.hora">
-                        <p class="m-1">:</p>
-                        <input type="number" class="form-control" name="fin-minuto" placeholder="MM" readonly [(ngModel)]="horaFin.minuto">
-                      </div>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="form-group col-12" >
-                    <label for="observacion">Observacion</label>
-                    <div class="input-group">
-                        <textarea type="text" class="form-control" id="observacion" name="observacion" [(ngModel)]="reserva.observacion"></textarea>
+                <div class="row mt-3">
+                    <div class="form-group col-sm-6 col-md-6">
+                        <label for="observacion">Observacion</label>
+                        <div class="input-group">
+                            <textarea type="text" class="form-control" id="observacion" name="observacion"
+                                [(ngModel)]="reserva.observacion"></textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-3">
-                <div class="form-group col-6" >
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="asistio" (change)="toggleFlag()" [checked]="this.reserva.flagAsistio === 'S'">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Asistió
-                        </label>
-                      </div>
+                <div class="row mt-3">
+                    <div class="form-group col-sm-6 col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="asistio"
+                                (change)="toggleFlag()" [checked]="this.reserva.flagAsistio === 'S'">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Asistió
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>    
+            </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" routerLink="/reserva" data-bs-dismiss="modal">Volver</button>
+            <button type="button" class="btn btn-secondary m-2" routerLink="/reserva" data-bs-dismiss="modal">Volver</button>
             <button type="button" class="btn btn-primary" (click)="modificarReserva()">Guardar</button>
         </div>
-    </div> 
+    </div>
 </div>
