@@ -11,7 +11,7 @@
                 <input type="text" class="form-control" id="empleado" name="empleado" readonly
                     [(ngModel)]="empleado.fullName">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#empleadoModal"
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#empleadoModal"
                         type="button">Buscar</button>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <input type="text" class="form-control" id="cliente" readonly name="cliente"
                     [(ngModel)]="cliente.fullName">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#clienteModal"
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#clienteModal"
                         type="button">Buscar</button>
                 </div>
             </div>
@@ -43,7 +43,7 @@
 
 <div class="row">
     <div class="col-md-12 text-end">
-        <button type="button" class="btn btn-info mt-2" (click)="buscar()">Buscar</button>
+        <button type="button" class="btn btn-primary     mt-2" (click)="buscar()">Buscar</button>
     </div>
 </div>
 <div class="table-responsive">
@@ -63,8 +63,9 @@
                 <td>{{group.idFichaClinica.idTipoProducto.idCategoria.descripcion}}</td>
                 <td>{{group.idFichaClinica.idTipoProducto.descripcion}}</td>
                 <td>
-                    <button class="btn btn-outline-success mx-2" [routerLink]="[group.idServicio, 'ver']">Ver</button>
-                    <button class="btn btn-outline-success mx-2" [routerLink]="[group.idServicio, 'detalle']">Agregar Detalle</button>
+                    <button class="btn btn-success m-2" [routerLink]="[group.idServicio, 'ver']">Ver</button>
+                    <button class="btn btn-success" [routerLink]="[group.idServicio, 'detalle']">Agregar
+                        Detalle</button>
 
                 </td>
 

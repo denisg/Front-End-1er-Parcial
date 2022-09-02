@@ -11,7 +11,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="empleado" name="empleado" readonly [(ngModel)]="empleado.fullName"> 
                         <div class="input-group-append">
-                            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#empleadoModal" type="button">Buscar</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#empleadoModal" type="button">Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                                name="dp" ngbDatepicker #d="ngbDatepicker" [(ngModel)]="fecha"
                                (ngModelChange)="onDateChange()">
                         <div class="input-group-append">
-                          <button class="btn btn-outline-info" (click)="d.toggle()" type="button">Elegir fecha</button>
+                          <button class="btn btn-primary" (click)="d.toggle()" type="button">Elegir fecha</button>
                         </div>
                       </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="cliente" readonly name="cliente" [(ngModel)]="cliente.fullName"> 
                         <div class="input-group-append">
-                            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#clienteModal" type="button" >Buscar</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#clienteModal" type="button" >Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
         </form>    
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            <button type="button" class="btn btn-secondary m-2" routerLink="/reserva" data-bs-dismiss="modal">Volver</button>
             <button type="button" class="btn btn-primary" (click)="crearReserva()">Guardar</button>
         </div>
         <div class="table-responsive">
@@ -75,7 +75,7 @@
                     <td>{{group.idEmpleado?.nombre + " " + group.idEmpleado?.apellido }}</td>
                     <td>{{group.idCliente?.nombre + " " + group.idCliente?.apellido }}</td>
                     <td>
-                        <button class="btn btn-outline-success mx-2" (click)="seleccionarTurno(group.horaInicio, group.horaFin)">Seleccionar</button>
+                        <button class="btn btn-primary-success mx-2" (click)="seleccionarTurno(group.horaInicio, group.horaFin)">Seleccionar</button>
                     </td>
                     </tr>
                 </tbody>
