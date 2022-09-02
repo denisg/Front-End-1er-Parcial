@@ -1,76 +1,86 @@
 <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Agregar Ficha</h5>
-      </div>
-      <div class="modal-body">
-        <form>
-            <div class="row">
-                <div class="form-group col-6" >
-                    <label for="empleado">Empleado</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="empleado" name="empleado" readonly [(ngModel)] = "empleado.fullName"> 
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#empleadoModal" type="button">Buscar</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group col-6">
-                    <label for="cliente">Cliente</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="cliente" readonly name="cliente" [(ngModel)]="cliente.fullName"> 
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#clienteModal" type="button" >Buscar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-6">
-                    <label for="categoria">Categoria</label>
-                    <select class="form-select" id="categoria" name="categoria" [(ngModel)]="categoria" (ngModelChange)="getTipoProductos()"> 
-                        <option *ngFor="let categoria of categorias" [ngValue]="categoria">{{categoria.descripcion}}</option>
-                        
-                    </select>
-                </div>
-                <div class="form-group col-6">
-                    <label for="subcategoria">Tipo Producto</label>
-                    <select name="subcategoria" class="form-select" id="subcategoria" [(ngModel)]="tipoProducto"> 
-                        <option *ngFor="let tipoProducto of tipoProductos" [ngValue]="tipoProducto">{{tipoProducto.descripcion}}</option>
-                    </select>
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="form-group col-6">
-                    <label for="motivoConsulta">Motivo de Consulta</label>
-                    <textarea type="text" class="form-control" id="motivoConsulta" name="motivoConsulta" [(ngModel)]="ficha.motivoConsulta"></textarea>
-                </div>
-                <div class="form-group  col-6">
-                    <label for="diagnostico">Diagnostico</label>
-                    <textarea type="textArea" class="form-control" id="diagnostico" name="diagnostico" [(ngModel)]="ficha.diagnostico"></textarea> 
-                </div>
-                </div>
-            <div class="form-group">
-                <label for= "observacion">Observaciones</label>
-                <textarea type="text" class="form-control" id="observacion" name="observacion" [(ngModel)]="ficha.observacion"></textarea>
-            </div>
-        </form>    
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Agregar Ficha</h5>
         </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" routerLink="/ficha">Volver</button>
-        <button type="button" class="btn btn-primary" (click)="guardarFicha()">Guardar</button>
-    </div>
+        <div class="modal-body">
+            <form>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="empleado">Empleado</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="empleado" name="empleado" readonly
+                                [(ngModel)]="empleado.fullName">
+                            <div class="input-group-append">
+                                <button class="ml-2 btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#empleadoModal" type="button">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="cliente">Cliente</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="cliente" readonly name="cliente"
+                                [(ngModel)]="cliente.fullName">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#clienteModal" type="button">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="categoria">Categoria</label>
+                        <select class="form-select" id="categoria" name="categoria" [(ngModel)]="categoria"
+                            (ngModelChange)="getTipoProductos()">
+                            <option *ngFor="let categoria of categorias" [ngValue]="categoria">{{categoria.descripcion}}
+                            </option>
+
+                        </select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="subcategoria">Tipo Producto</label>
+                        <select name="subcategoria" class="form-select" id="subcategoria" [(ngModel)]="tipoProducto">
+                            <option *ngFor="let tipoProducto of tipoProductos" [ngValue]="tipoProducto">
+                                {{tipoProducto.descripcion}}</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="motivoConsulta">Motivo de Consulta</label>
+                        <textarea type="text" class="form-control" id="motivoConsulta" name="motivoConsulta"
+                            [(ngModel)]="ficha.motivoConsulta"></textarea>
+                    </div>
+                    <div class="form-group  col-6">
+                        <label for="diagnostico">Diagnostico</label>
+                        <textarea type="textArea" class="form-control" id="diagnostico" name="diagnostico"
+                            [(ngModel)]="ficha.diagnostico"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="observacion">Observaciones</label>
+                    <textarea type="text" class="form-control" id="observacion" name="observacion"
+                        [(ngModel)]="ficha.observacion"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary m-2" routerLink="/ficha">Volver</button>
+            <button type="button" class="btn btn-primary " (click)="guardarFicha()">Guardar</button>
+        </div>
     </div>
 </div>
 
 
 
 <div class="modal fade" id="empleadoModal" tabindex="-1" aria-hidden="true">
-    <app-buscarempleado (seleccionarEmpleadoEvent)="seleccionarEmpleado($event)"></app-buscarempleado>    
+    <app-buscarempleado (seleccionarEmpleadoEvent)="seleccionarEmpleado($event)"></app-buscarempleado>
 </div>
 
 
 <div class="modal fade" id="clienteModal" tabindex="-1" aria-hidden="true">
-   <app-buscarcliente (seleccionarClienteEvent)="seleccionarCliente($event)"></app-buscarcliente>
+    <app-buscarcliente (seleccionarClienteEvent)="seleccionarCliente($event)"></app-buscarcliente>
 </div>
