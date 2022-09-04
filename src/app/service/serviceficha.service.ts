@@ -45,7 +45,7 @@ export class ServicefichaService {
   postficha(ficha: Ficha):Observable<Ficha>{  
     console.log("headers: " + localStorage.getItem("userSession") ?? "" )
     return this.http.post<Ficha>(this.api,ficha,{
-      headers:{usuario: localStorage.getItem("userSession") ?? ""}
+      headers:{usuario: "gustavo"}
     }).pipe(
       tap(
         data => console.log("Agregado: " + data),

@@ -80,8 +80,8 @@
                         <td>{{group.fecha}}</td>
                         <td>{{group.horaInicio}}</td>
                         <td>{{group.horaFin}}</td>
-                        <td>{{group.idEmpleado?.nombre + " " + group.idEmpleado?.apellido }}</td>
-                        <td>{{group.idCliente?.nombre + " " + group.idCliente?.apellido }}</td>
+                        <td>{{group.idEmpleado.nombre + " " + group.idEmpleado.apellido }}</td>
+                        <td>{{group.idCliente.nombre + " " + group.idCliente.apellido }}</td>
                         <td>
                             <button class="btn btn-primary-success mx-2"
                                 (click)="seleccionarTurno(group.horaInicio, group.horaFin)">Seleccionar</button>

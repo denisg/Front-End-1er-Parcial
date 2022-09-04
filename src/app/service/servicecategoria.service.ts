@@ -8,11 +8,11 @@ import { Categoria } from '../models/categoria';
   providedIn: 'root'
 })
 export class ServicecategoriaService {
-  private api: string = base_url  + "stock-nutrinatalia/categoria";
-  constructor(private http: HttpClient) { 
-    
+  private api: string = base_url + "stock-nutrinatalia/categoria";
+  constructor(private http: HttpClient) {
+
   }
-  getCategorias():Observable<listadatos<Categoria>>{
+  getCategorias(): Observable<listadatos<Categoria>> {
     return this.http.get<listadatos<Categoria>>(this.api);
-  } 
+  }
 }

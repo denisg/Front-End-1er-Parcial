@@ -10,9 +10,9 @@ export class ServicetipoproductoService {
   private api = base_url + "stock-nutrinatalia/tipoProducto";
   constructor(private http: HttpClient) { }
 
-  getTipoProductos(idCategoria: number){
+  getTipoProductos(idCategoria: number) {
     let params = new HttpParams()
-    .set('ejemplo', `{"idCategoria":{"idCategoria": ${idCategoria}}}`)
-    return this.http.get<listadatos<Subcategoria>>(this.api,{params:params});
+      .set('ejemplo', `{"idCategoria":{"idCategoria": ${idCategoria}}}`)
+    return this.http.get<listadatos<Subcategoria>>(this.api, { params: params });
   }
 }

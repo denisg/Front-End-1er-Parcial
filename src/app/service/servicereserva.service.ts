@@ -13,9 +13,9 @@ export class ReservaService {
 
   constructor(private http: HttpClient) { }
 
-  getReservas(filtros: any, itemsPerPage:number,inicio:number): Observable<listadatos<Reserva>> {
+  getReservas(filtros: any, itemsPerPage: number, inicio: number): Observable<listadatos<Reserva>> {
     //console.log(filtros);
-    let ejemplo: any = { }
+    let ejemplo: any = {}
     if (filtros.fechaDesde) {
       ejemplo['fechaDesdeCadena'] = filtros.fechaDesde.split('-').join('')
     }
@@ -26,23 +26,23 @@ export class ReservaService {
       ejemplo["idCliente"] = { "idPersona": filtros.idCliente }
     }
     if (filtros.idEmpleado) {
-      ejemplo['idEmpleado'] = { "idPersona": filtros.idEmpleado}
+      ejemplo['idEmpleado'] = { "idPersona": filtros.idEmpleado }
     }
 
     ejemplo['flagEstado'] = "R";
 
     console.log(JSON.stringify(ejemplo));
-      let params = new HttpParams()
-        .set('cantidad', itemsPerPage)
-        .set('inicio', inicio)
-        .set('ejemplo', JSON.stringify(ejemplo));
+    let params = new HttpParams()
+      .set('cantidad', itemsPerPage)
+      .set('inicio', inicio)
+      .set('ejemplo', JSON.stringify(ejemplo));
 
-    return this.http.get<listadatos<Reserva>>(`${this.api}stock-pwfe/reserva`, {params})
+    return this.http.get<listadatos<Reserva>>(`${this.api}stock-nutrinatalia/reserva`, { params })
   }
 
   postReserva(reserva: ReservaPostBody): Observable<Reserva> {
     console.log('Agregando reserva' + JSON.stringify(reserva));
-    return this.http.post<Reserva>(`${this.api}stock-pwfe/reserva`, reserva, {
+    return this.http.post<Reserva>(`${this.api}stock-nutrinatalia/reserva`, reserva, {
       headers: {
         "usuario": localStorage.getItem('userSession') as string,
       }
@@ -50,8 +50,8 @@ export class ReservaService {
   }
 
   cancelarReserva(idReserva: number): Observable<void> {
-    console.log(`${this.api}stock-pwfe/reserva/${idReserva}`)
-    return this.http.delete<void>(`${this.api}stock-pwfe/reserva/${idReserva}`, {
+    console.log(`${this.api}stock-nutrinatalia/reserva/${idReserva}`)
+    return this.http.delete<void>(`${this.api}stock-nutrinatalia/reserva/${idReserva}`, {
       headers: {
         "usuario": localStorage.getItem('userSession') as string,
       }
@@ -61,18 +61,18 @@ export class ReservaService {
   getAgenda(idPersona: number, fecha: string, itemsPerPage: number, inicio: number): Observable<Reserva[]> {
     console.log('Obteniendo agenda');
     let params = new HttpParams()
-        .set('cantidad', itemsPerPage)
-        .set('inicio', inicio)
-        .set('fecha', fecha)
-        .set('disponible', 'S');
-    return this.http.get<Reserva[]>(`${this.api}stock-pwfe/persona/${idPersona}/agenda`, {params});
+      .set('cantidad', itemsPerPage)
+      .set('inicio', inicio)
+      .set('fecha', fecha)
+      .set('disponible', 'S');
+    return this.http.get<Reserva[]>(`${this.api}stock-nutrinatalia/persona/${idPersona}/agenda`, { params });
   }
 
   getReserva(idReserva: number): Observable<Reserva> {
-    return this.http.get<Reserva>(`${this.api}stock-pwfe/reserva/${idReserva}`);
+    return this.http.get<Reserva>(`${this.api}stock-nutrinatalia/reserva/${idReserva}`);
   }
 
   modificarReserva(reserva: ReservaPutBody): Observable<void> {
-    return this.http.put<void>(`${this.api}stock-pwfe/reserva`, reserva);
+    return this.http.put<void>(`${this.api}stock-nutrinatalia/reserva`, reserva);
   }
 }
