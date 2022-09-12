@@ -47,7 +47,8 @@ export class FichaComponent implements OnInit {
   constructor(private http: HttpClient, private servicioFicha: ServicefichaService,private serviceCategoria: ServicecategoriaService,private serviceTipoProducto: ServicetipoproductoService) { }
 
   ngOnInit(){
-    this.getCategorias()
+    this.getCategorias();
+    this.buscar();
   }
   getFichas(){
     let currentPage = this.config.currentPage;

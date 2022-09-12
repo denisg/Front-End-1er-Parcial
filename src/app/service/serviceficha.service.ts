@@ -63,9 +63,10 @@ export class ServicefichaService {
     console.log('putFichaMedica');
     console.log(ficha.idFichaClinica);
     console.log(ficha.observacion);
-    return this.http.put<Ficha>(this.api, { 'idFichaClinica': ficha.idFichaClinica, 'observacion': ficha.observacion }, {
-      headers: { usuario: localStorage.getItem("userSession") ?? "" }
-    });
+    // return this.http.put<Ficha>(this.api, { 'idFichaClinica': ficha.idFichaClinica, 'observacion': ficha.observacion }, {
+    //   headers: { usuario: localStorage.getItem("userSession") ?? "" }
+    // });
+    return this.http.put<Ficha>(this.api, { 'idFichaClinica': ficha.idFichaClinica, 'observacion': ficha.observacion });
   }
 
 
