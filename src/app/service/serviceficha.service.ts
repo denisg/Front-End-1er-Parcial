@@ -37,11 +37,12 @@ export class ServicefichaService {
       .set('ejemplo', JSON.stringify(ejemplo))
 
     return this.http.get<listadatos<Ficha>>(this.api, { params: params });
-
   }
+
   getAllfichas(): Observable<listadatos<Ficha>> {
     return this.http.get<listadatos<Ficha>>(this.api);
   }
+
   postficha(ficha: Ficha): Observable<Ficha> {
     console.log("headers: " + localStorage.getItem("userSession") ?? "")
     return this.http.post<Ficha>(this.api, ficha, {
@@ -53,11 +54,18 @@ export class ServicefichaService {
       )
     );
   }
+
   getFicha(idFichaClinica: number): Observable<Ficha> {
     return this.http.get<Ficha>(this.api + '/' + idFichaClinica);
   }
+
   putFicha(ficha: Ficha): Observable<Ficha> {
-    return this.http.put<Ficha>(this.api, { 'idFichaClinica': ficha.idFichaClinica, 'observacion': ficha.observacion });
+    console.log('putFichaMedica');
+    console.log(ficha.idFichaClinica);
+    console.log(ficha.observacion);
+    return this.http.put<Ficha>(this.api, { 'idFichaClinica': ficha.idFichaClinica, 'observacion': ficha.observacion }, {
+      headers: { usuario: localStorage.getItem("userSession") ?? "" }
+    });
   }
 
 
