@@ -37,16 +37,17 @@ export class ReservaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.filtros = { fechaDesde: '', fechaHasta: '' };
     this.getReservas();
     this.getReservasInicial();
   }
 
   getReservasInicial() {
-    this.reservaService.getReservas({}, 10, 1)
-      .subscribe((data: listadatos<Reserva>) => {
-        this.data = data.lista;
-        this.config.totalItems = data.totalDatos;
-      });
+    this.filtros.fechaDesde = "20200221";
+    this.filtros.fechaHasta = "40290911";
+    this.getReservas();
+    this.filtros.fechaDesde = "";
+    this.filtros.fechaHasta = "";
   }
 
   getReservas() {

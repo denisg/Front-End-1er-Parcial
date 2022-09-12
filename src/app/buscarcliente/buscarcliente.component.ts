@@ -33,6 +33,7 @@ export class BuscarclienteComponent implements OnInit {
   constructor(private servicePersona: ServicepersonaService) { }
 
   ngOnInit(): void {
+    this.getClientes();
   }
     
   getClientes(){
