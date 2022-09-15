@@ -63,11 +63,24 @@ export class ServicefichaService {
     console.log('putFichaMedica');
     console.log(ficha.idFichaClinica);
     console.log(ficha.observacion);
-    // return this.http.put<Ficha>(this.api, { 'idFichaClinica': ficha.idFichaClinica, 'observacion': ficha.observacion }, {
-    //   headers: { usuario: localStorage.getItem("userSession") ?? "" }
-    // });
-    return this.http.put<Ficha>(this.api, { 'idFichaClinica': ficha.idFichaClinica, 'observacion': ficha.observacion });
+
+    return this.http.put<Ficha>(this.api, { 'idFichaClinica': ficha.idFichaClinica, 'observacion': ficha.observacion }, {
+      headers: { usuario: localStorage.getItem("userSession") ?? "usuario2" }
+    });
+
+    //return this.http.put<Ficha>(this.api, { 'idFichaClinica': ficha.idFichaClinica, 'observacion': ficha.observacion });
   }
 
+  putFicha2(idFichaClinica: string, observacion: string): Observable<Ficha> {
+    console.log('putFichaMedica 2da version');
+    console.log(idFichaClinica);
+    console.log(observacion);
+
+    // return this.http.put<Ficha>(this.api, { 'idFichaClinica': idFichaClinica, 'observacion': observacion }, {
+    //   headers: { usuario: localStorage.getItem("userSession") ?? "" }
+    // });
+
+    return this.http.put<Ficha>(this.api, { 'idFichaClinica': idFichaClinica, 'observacion': observacion });
+  }
 
 }

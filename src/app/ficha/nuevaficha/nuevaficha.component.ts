@@ -54,7 +54,7 @@ export class NuevafichaComponent implements OnInit {
     this.ficha.idTipoProducto.idTipoProducto = this.tipoProducto.idTipoProducto
     this.ficha.idCliente.idPersona = this.cliente.idPersona
     this.ficha.idEmpleado.idPersona = this.empleado.idPersona
-    this.serviceFicha.postficha(this.ficha).subscribe()
+    console.log('Crear ficha: ',this.serviceFicha.postficha(this.ficha).subscribe())
   }
 
 }
