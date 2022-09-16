@@ -2,51 +2,53 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="router.url != '/login'">
-    <div class="container">
-      <a class="navbar-brand" href="#">Poli-Hospital</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link"    routerLink="/" routerLinkActive="active">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  routerLink="/categoria" routerLink="/categoria" routerLinkActive="active">Categorias</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  routerLink="/ficha" routerLink="/ficha" routerLinkActive="active">Fichas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/reserva" routerLinkActive="active">Reservas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/servicio" routerLinkActive="active">Servicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/reporte" routerLinkActive="active">Reporte</a>
-          </li>
+  <div class="container">
+    <a class="navbar-brand" href="#">Poli-Hospital</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/categoria" routerLink="/categoria" routerLinkActive="active">Categorias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/servicio" routerLinkActive="active">Servicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ficha" routerLink="/ficha" routerLinkActive="active">Fichas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/reserva" routerLinkActive="active">Reservas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/reporte" routerLinkActive="active">Reporte</a>
+        </li>
 
-        </ul>
-        
+      </ul>
 
-        <div class="float-end">
-          <a class="text-decoration-none text-light">
+
+      <div class="float-end">
+        <a class="text-decoration-none text-light">
           <i class="bi bi-person-circle"></i>
           <span> {{usuarioSession}}&emsp;</span>
-          </a>
-          
-        <button (click)="logOut()"class="btn btn-danger" type="submit"><i class="bi bi-box-arrow-right"></i>  Cerrar Sesión</button>
-        
-      </div>
+        </a>
+
+        <button (click)="logOut()" class="btn btn-danger" type="submit"><i class="bi bi-box-arrow-right"></i> Cerrar
+          Sesión</button>
 
       </div>
+
     </div>
-  </nav>
-  
+  </div>
+</nav>
+
 <body class="mx-auto mt-5">
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </body>
 <footer class="bg-light text-center text-lg-start">
   <!-- Copyright -->
