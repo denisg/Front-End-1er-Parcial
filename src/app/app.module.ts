@@ -23,6 +23,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgregarDetalleComponent } from './servicio/agregar-detalle/agregar-detalle.component';
 import { ModificarReservaComponent } from './reserva/modificar-reserva/modificar-reserva.component';
 import { VerServicioComponent } from './servicio/ver-servicio/ver-servicio.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryService } from './service/category.service';
+import { FullPageModalComponent } from './includes/full-page-modal/full-page-modal.component';
+import { BackModalComponent } from './includes/back-modal/back-modal.component';
+import { TitledInputComponent } from './includes/titled-input/titled-input.component';
+import { SubCategoryComponent } from './sub-category/sub-category.component';
+import { CreateCategoryComponent } from './category/create-category/create-category.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +49,13 @@ import { VerServicioComponent } from './servicio/ver-servicio/ver-servicio.compo
     AgregarDetalleComponent,
     VerServicioComponent,
     ReporteComponent,
+    CategoryComponent,
+    FullPageModalComponent,
+    BackModalComponent,
+    TitledInputComponent,
+    SubCategoryComponent,
+    CreateCategoryComponent
+
   ],
   imports: [
     BrowserModule,
@@ -51,7 +65,7 @@ import { VerServicioComponent } from './servicio/ver-servicio/ver-servicio.compo
     NgxPaginationModule,
     NgbModule,
   ],
-  providers: [ServicepersonaService],
+  providers: [ServicepersonaService, CategoryService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

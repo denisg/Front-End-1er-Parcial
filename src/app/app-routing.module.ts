@@ -13,6 +13,8 @@ import { NuevoServicioComponent } from './servicio/nuevo-servicio/nuevo-servicio
 import { ServicioComponent } from './servicio/servicio.component';
 import { VerServicioComponent } from './servicio/ver-servicio/ver-servicio.component';
 import { ReporteComponent } from './reporte/reporte.component';
+import { CategoryComponent } from './category/category.component';
+import { CreateCategoryComponent } from './category/create-category/create-category.component';
 
 
 const routes: Routes = [
@@ -23,6 +25,14 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "categoria",
+    component: CategoryComponent
+  },
+  {
+    path: "categoria/nuevo",
+    component: CreateCategoryComponent
   },
   {
     path: "ficha/:id/editar",

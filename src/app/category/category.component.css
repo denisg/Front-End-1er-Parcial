@@ -1,0 +1,42 @@
+/* .new-category-modal-container {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0008;
+}
+
+.new-category-modal {
+    position: relative;
+    background-color: white;
+    margin: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.category-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.category-container-background {
+    z-index: 70;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0004;
+}
+
+@media screen and (min-width: 480px) {
+    .category-container {
+        margin: 0;
+    }
+
+} */

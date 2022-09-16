@@ -1,0 +1,9 @@
+<div class="bd-example">
+    <div *ngFor="let subCategory of subCategories">
+        <!-- LIST -->
+        <li class="list-group-item" *ngIf="subCategory.categoryId === category.id">
+            - {{subCategory.name}}
+        </li>
+
+    </div>
+</div>
