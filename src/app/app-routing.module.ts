@@ -15,6 +15,7 @@ import { VerServicioComponent } from './servicio/ver-servicio/ver-servicio.compo
 import { ReporteComponent } from './reporte/reporte.component';
 import { CategoryComponent } from './category/category.component';
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
+import { CreateSubcategoryComponent } from './category/create-subcategory/create-subcategory.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,10 @@ const routes: Routes = [
     component: CreateCategoryComponent
   },
   {
+    path: "categoria/:id/subcategoria/crear",
+    component: CreateSubcategoryComponent,
+  },
+  {
     path: "ficha/:id/editar",
     component: ModificarfichaComponent
   },
@@ -46,7 +51,7 @@ const routes: Routes = [
     path: "ficha",
     component: FichaComponent
   },
-  
+
   {
     path: "reserva",
     component: ReservaComponent
@@ -79,7 +84,7 @@ const routes: Routes = [
     path: "reporte",
     component: ReporteComponent
   }
-  
+
 ];
 
 @NgModule({

@@ -24,7 +24,7 @@
 						<sub-category-list [subCategories]="subCategories" [category]="category"></sub-category-list>
 					</td>
 					<td class="col-1">
-						<button class="btn btn-primary">Agregar</button>
+						<button class="btn  btn-primary" [routerLink]="[category.id,'subcategoria','crear']">Agregar</button>
 					</td>
 				</tr>
 			</tbody>

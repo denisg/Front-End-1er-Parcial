@@ -1,0 +1,21 @@
+<div class="modal-dialog modal-xl">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Agregar Subcategoria a la Categoria ID: {{categoriaId}}
+      </h5>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="observacion">Descripción</label>
+          <textarea type="text" class="form-control" id="observacion" name="observacion"
+            [(ngModel)]="subcategoria.descripcion"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary m-2" routerLink="/categoria">Volver</button>
+      <button type="button" class="btn btn-primary " (click)="guardar()">Guardar</button>
+    </div>
+  </div>
+</div>

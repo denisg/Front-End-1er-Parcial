@@ -30,6 +30,7 @@ import { BackModalComponent } from './includes/back-modal/back-modal.component';
 import { TitledInputComponent } from './includes/titled-input/titled-input.component';
 import { SubCategoryComponent } from './sub-category/sub-category.component';
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
+import { CreateSubcategoryComponent } from './category/create-subcategory/create-subcategory.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CreateCategoryComponent } from './category/create-category/create-categ
     BackModalComponent,
     TitledInputComponent,
     SubCategoryComponent,
-    CreateCategoryComponent
+    CreateCategoryComponent,
+    CreateSubcategoryComponent
 
   ],
   imports: [
