@@ -18,6 +18,7 @@ import { CreateCategoryComponent } from './category/create-category/create-categ
 import { CreateSubcategoryComponent } from './category/create-subcategory/create-subcategory.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { CrearPacientesComponent } from './pacientes/crear-pacientes/crear-pacientes.component';
+import { ModificarPacientesComponent } from './pacientes/modificar-pacientes/modificar-pacientes.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path: "pacientes/nuevo",
     component: CrearPacientesComponent,
+  },
+  {
+    path: "pacientes/:id/editar",
+    component: ModificarPacientesComponent,
   },
   {
     path: "ficha/:id/editar",

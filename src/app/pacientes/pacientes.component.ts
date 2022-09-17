@@ -15,6 +15,10 @@ export class PacientesComponent implements OnInit {
     this.clearSelectedPatient();
   }
 
+  ngOnInit(): void {
+    this.loadPatients();
+  }
+
   clearSelectedPatient() {
     this.selectedPatient = {
       id: '',
@@ -32,8 +36,10 @@ export class PacientesComponent implements OnInit {
     this.patients = await this._service.getAllPatients("?inicio=0&orderBy=idPersona&orderDir=desc");
   }
 
-  ngOnInit(): void {
-    this.loadPatients();
+  async eliminarPaciente(id: number) {
+    console.log('eliminado paciente id:', id);
+    await this._service.deletePatient(id);
+    this.ngOnInit();
   }
 
 }

@@ -27,8 +27,8 @@
           <td>{{patient.phone?patient.phone:''}}</td>
           <td>
             <div class="inline">
-              <button class="btn btn-success" >Editar</button>
-              <button class="btn btn-danger" >Eliminar</button>
+              <button class="btn btn-success" [routerLink]="[patient.id,'editar']">Editar</button>
+              <button class="btn btn-danger" (click)="eliminarPaciente(patient.id)">Eliminar</button>
             </div>
           </td>
         </tr>
