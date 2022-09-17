@@ -37,12 +37,12 @@ export class PatientService {
       ruc: p.document,
       cedula: p.document,
       tipoPersona: p.type,
-      fechaNacimiento: p.birthday + ' 00:00:01.1'
+      fechaNacimiento: p.birthday + ' 00:00:00'
     }
   }
 
-  public async getAllPatients(): Promise<any[]> {
-    const { lista } = await this._http.get<any>(this.urlApiPatient).toPromise();
+  public async getAllPatients(filtro: string): Promise<any[]> {
+    const { lista } = await this._http.get<any>(this.urlApiPatient + filtro).toPromise();
     const newPatients = lista.map((p: any) => this.newPatientFromServer(p));
     this.patients = newPatients;
     return newPatients;
@@ -60,5 +60,10 @@ export class PatientService {
     await this._http.put<any>(
       this.urlApiPatient,
       this.newPatientToSend(patient)).toPromise();
+  }
+
+  public async deletePatient(patientid: any): Promise<any> {
+    await this._http.delete<any>(
+      this.urlApiPatient + `/${patientid}`, {}).toPromise();
   }
 }

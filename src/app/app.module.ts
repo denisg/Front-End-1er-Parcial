@@ -33,6 +33,7 @@ import { CreateCategoryComponent } from './category/create-category/create-categ
 import { CreateSubcategoryComponent } from './category/create-subcategory/create-subcategory.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { CrearPacientesComponent } from './pacientes/crear-pacientes/crear-pacientes.component';
+import { ModificarPacientesComponent } from './pacientes/modificar-pacientes/modificar-pacientes.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { CrearPacientesComponent } from './pacientes/crear-pacientes/crear-pacie
     CreateCategoryComponent,
     CreateSubcategoryComponent,
     PacientesComponent,
-    CrearPacientesComponent
+    CrearPacientesComponent,
+    ModificarPacientesComponent
 
   ],
   imports: [
