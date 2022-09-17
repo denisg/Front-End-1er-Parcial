@@ -1,0 +1,91 @@
+<div>
+
+  <!-- Crear btn paciente -->
+  <div class="col-sm-12 col-md-12 ml-2 mb-2 text-end">
+    <button type="button" class="btn btn-primary" routerLink="/pacientes/nuevo">Nuevo Paciente</button>
+  </div>
+
+
+  <!-- Lista de Pacientes -->
+
+  <div id="tbodyDiv" class="table-responsive h-600">
+    <table class="table table-striped table-bordered ">
+      <thead>
+        <tr>
+          <th scope="col">CI/RUC</th>
+          <th scope="col">Nombre Completo</th>
+          <th scope="col">Email</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients">
+          <td>{{patient.document?patient.document:''}}</td>
+          <td><strong>{{patient.fullName?patient.fullName:''}}</strong></td>
+          <td>{{patient.email?patient.email:''}}</td>
+          <td>{{patient.phone?patient.phone:''}}</td>
+          <td>
+            <div class="inline">
+              <button class="btn btn-success" (click)="showEditPatientModal(patient)">Editar</button>
+              <button class="btn btn-danger" (click)="showEditPatientModal(patient)">Eliminar</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- <back-modal 
+        ngDefaultControl
+        [title]="editingModal?'Modificar paciente '+selectedPatient.id:'Nuevo paciente'"
+        [(ngModel)]="showAddModal"
+        [canConfirm]="isValidSelectedPatient"
+        [confirmButtonText]="editingModal?'Modificar':'Crear'"
+        (confirmed)="editingModal?editPatient():createPatient()"
+    >
+        NAME INPUT
+        <titled-input 
+            ngDefaultControl 
+            title="Nombre" 
+            [(ngModel)]="selectedPatient.name">
+        </titled-input>
+        LAST NAME INPUT
+        <titled-input 
+            ngDefaultControl 
+            title="Apellido" 
+            [(ngModel)]="selectedPatient.lastName">
+        </titled-input>
+        EMAIL INPUT
+        <titled-input 
+            ngDefaultControl 
+            title="Email" 
+            [(ngModel)]="selectedPatient.email">
+        </titled-input>
+        PHONE INPUT
+        <titled-input 
+            ngDefaultControl 
+            title="Celular" 
+            [(ngModel)]="selectedPatient.phone">
+        </titled-input>
+        DOCUMENT INPUT
+        <titled-input 
+            ngDefaultControl 
+            title="CI/RUC" 
+            [(ngModel)]="selectedPatient.document">
+        </titled-input>
+        BIRTHDAY INPUT
+        <titled-input 
+            ngDefaultControl 
+            title="Fecha de nacimiento" 
+            type="date"
+            [(ngModel)]="selectedPatient.birthday">
+        </titled-input>
+        TYPE INPUT
+        <titled-input 
+            ngDefaultControl 
+            title="Tipo de persona" 
+            [(ngModel)]="selectedPatient.type">
+        </titled-input>
+
+    </back-modal> -->

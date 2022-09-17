@@ -31,6 +31,8 @@ import { TitledInputComponent } from './includes/titled-input/titled-input.compo
 import { SubCategoryComponent } from './sub-category/sub-category.component';
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
 import { CreateSubcategoryComponent } from './category/create-subcategory/create-subcategory.component';
+import { PacientesComponent } from './pacientes/pacientes.component';
+import { CrearPacientesComponent } from './pacientes/crear-pacientes/crear-pacientes.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { CreateSubcategoryComponent } from './category/create-subcategory/create
     TitledInputComponent,
     SubCategoryComponent,
     CreateCategoryComponent,
-    CreateSubcategoryComponent
+    CreateSubcategoryComponent,
+    PacientesComponent,
+    CrearPacientesComponent
 
   ],
   imports: [
