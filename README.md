@@ -1,16 +1,12 @@
-# Proyectoangular
+# Trabajo Practico de Electiva Front-End 1er Parcial
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
+## Ejecute con el siguiente comando para poder evitar el problema de CORS del Back-End
+chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 
-
-## Agregue un plugin en chrome que activa/desactiva
-https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es
-
-<hr>
+O usar el navegador Firefox con cualquier plugin de CORS tambien es válido
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm run ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -31,7 +27,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
-## Problema del CORS
-
